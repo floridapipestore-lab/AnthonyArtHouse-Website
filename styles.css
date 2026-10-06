@@ -1,0 +1,714 @@
+﻿/* WEBSITE APPEARANCE
+   Text, pictures, and links are in index.html.
+   This file controls colors, spacing, sizes, and phone layouts.
+   Rules near the bottom can override earlier rules.
+*/
+
+* {
+  box-sizing:border-box
+}
+
+html {
+  color:#282820;
+  background:#e6e6e6;
+  font-family:Georgia,'Times New Roman',serif
+}
+
+body {
+  margin:0;
+  padding:18px
+}
+
+a {
+  color:inherit
+}
+
+.page {
+  max-width:1080px;
+  margin:auto;
+  min-height:calc(100svh - 36px);
+  border:1px solid #c8c1b1;
+  background-color: #ffffff;
+  background-image: linear-gradient(rgba(255,255,255,0.02), rgba(255,255,255,0.02)), url("images/ceramic-glaze-background.png");
+  background-blend-mode: normal;
+  background-color: #f5f5f3;
+  background-size: auto, 850px 850px;
+  background-repeat: repeat;
+  padding:30px 64px 24px;
+  box-shadow:0 4px 28px #4638220a
+}
+
+nav {
+  display:flex;
+  justify-content:center;
+  gap:34px;
+  align-items:center;
+  font-size:16px
+}
+
+nav>a {
+  text-underline-offset:5px
+}
+
+.social {
+  position:relative
+}
+
+.social summary {
+  cursor:pointer;
+  list-style:none;
+  display:flex;
+  gap:9px;
+  align-items:center;
+  padding:8px 0
+}
+
+.social summary::-webkit-details-marker {
+  display:none
+}
+
+.social summary:after {
+  content:'';
+  width:6px;
+  height:6px;
+  border-right:1px solid;
+  border-bottom:1px solid;
+  transform:rotate(45deg);
+  margin-top:-4px
+}
+
+.social[open] summary:after {
+  transform:rotate(225deg);
+  margin-top:4px
+}
+
+.menu {
+  position:absolute;
+  right:0;
+  top:40px;
+  z-index:3;
+  min-width:220px;
+  padding:8px;
+  background:#fffcf6;
+  border:1px solid #c8c1b1;
+  box-shadow:0 8px 20px #3024101a
+}
+
+.menu a {
+  display:block;
+  padding:13px 12px;
+  font-size:16px;
+  text-decoration:none
+}
+
+.menu a:hover,.menu a:focus-visible {
+  background:#ebe5d7
+}
+
+header {
+  text-align:center;
+  margin:42px 0 38px
+}
+
+h1 {
+  font-size:clamp(32px,4.9vw,54px);
+  line-height:1.1;
+  font-weight:400;
+  letter-spacing:-1.5px;
+  margin:0
+}
+
+h1 span {
+  display:block
+}
+
+header p {
+  font-size:19px;
+  margin:18px 0 0
+}
+
+.collections {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:64px;
+  position:relative;
+  max-width:720px;
+  margin:auto
+}
+
+.collections:before {
+  content:'';
+  position:absolute;
+  top:0;
+  bottom:0;
+  width:1px;
+  background:#cec3ae;
+  left:50%
+}
+
+.collection {
+  text-align:center
+}
+
+.photo {
+  display:block;
+  width:100%;
+  height:360px;
+  object-fit:cover;
+  border-radius:180px 180px 0 0;
+  background:#d8cdb7
+}
+
+h2 {
+  font-size:17px;
+  font-weight:400;
+  margin:20px 0 10px;
+  letter-spacing:.04em
+}
+
+.shop {
+  width:100%;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:52px;
+  padding:12px 16px;
+  background:#394537;
+  color:#fffdf5;
+  border:1px solid #394537;
+  text-decoration:none;
+  font:18px Georgia;
+  border-radius:2px;
+  transition:background .18s
+}
+
+.shop:hover {
+  background:#263023
+}
+
+.shop[aria-disabled=true] {
+  cursor:default;
+  background:#ece4d5;
+  color:#514d43;
+  border-color:#c8bda8
+}
+
+.collection p {
+  font-size:15px;
+  margin:12px 0 4px;
+  color:#5e584b
+}
+
+footer {
+  text-align:center;
+  font-size:14px;
+  color:#625c50;
+  margin-top:35px
+}
+
+a:focus-visible,summary:focus-visible {
+  outline:2px solid #927139;
+  outline-offset:5px
+}
+
+@media(max-width:650px) {
+  body {
+    padding:8px
+  }
+  .page {
+    padding:22px 22px;
+    min-height:calc(100svh - 16px)
+  }
+  header {
+    margin:32px 0 28px
+  }
+  h1 {
+    letter-spacing:-.8px
+  }
+  .collections {
+    gap:28px
+  }
+  .photo {
+    height:280px
+  }
+  .shop {
+    font-size:16px;
+    padding:10px 6px
+  }
+  h2 {
+    font-size:15px;
+    line-height:1.4;
+    min-height:42px;
+    margin:16px 0 8px
+  }
+  .collection p {
+    font-size:14px;
+    line-height:1.4
+  }
+}
+
+@media(max-width:380px) {
+  .page {
+    padding:20px 14px
+  }
+  .collections {
+    gap:22px
+  }
+  .photo {
+    height:240px
+  }
+  h1 {
+    font-size:29px
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  * {
+    transition:none!important
+  }
+}
+
+nav {
+  gap:clamp(14px,4vw,34px);
+  flex-wrap:wrap
+}
+
+.collection .category {
+  font-size:18px;
+  margin:0 0 18px;
+  color:#39362e
+}
+
+.shop {
+  font-family:Arial,sans-serif;
+  font-weight:700;
+  box-shadow:0 4px 0 #30241025;
+  min-height:58px;
+  border-radius:5px
+}
+
+.shop.etsy {
+  background:#ae401a;
+  color:#fff;
+  border:2px solid #923514
+}
+
+.shop.glasspass {
+  background:#30483d;
+  color:#fff;
+  border:2px solid #233a30
+}
+
+.info {
+  max-width:720px;
+  margin:42px auto 0;
+  padding-top:26px;
+  border-top:1px solid #cec3ae;
+  scroll-margin-top:24px
+}
+
+.info h2 {
+  font-size:28px;
+  min-height:0;
+  margin:0 0 12px
+}
+
+.info p {
+  font-size:17px;
+  line-height:1.65;
+  margin:0;
+  max-width:620px
+}
+
+.contact-links {
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px 24px;
+  margin-top:14px;
+  font-size:16px
+}
+
+.contact-links a {
+  text-underline-offset:5px
+}
+
+@media(max-width:650px) {
+  .shop {
+    font-size:15px
+  }
+  .collection .category {
+    font-size:16px
+  }
+  .info {
+    margin-top:30px
+  }
+}
+
+.about {
+  display:grid;
+  grid-template-columns:220px 1fr;
+  gap:32px;
+  align-items:center
+}
+
+.artist-photo {
+  margin:0
+}
+
+.artist-photo img {
+  display:block;
+  width:100%;
+  height:280px;
+  object-fit:cover;
+  border-radius:110px 110px 3px 3px
+}
+
+.artist-photo figcaption {
+  font-size:12px;
+  line-height:1.5;
+  margin-top:10px;
+  color:#625c50;
+  text-align:center
+}
+
+@media(max-width:650px) {
+  .about {
+    grid-template-columns:1fr;
+    gap:22px
+  }
+  .artist-photo {
+    width:220px;
+    max-width:100%;
+    margin:auto
+  }
+  .artist-bio {
+    text-align:center
+  }
+}
+
+
+/* COLLECTION BRAND NAMES
+   EDIT: These two styles give each studio its own lettering.
+   The font lists include backups so the page also works offline.
+   Change font-size to adjust size, and color to adjust the lettering color.
+*/
+.collection .brand-anthony {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+  color: #9a3b1c;
+  margin: 10px 0 5px;
+  min-height: 0;
+}
+.collection .brand-florida {
+  font-family: Impact, "Arial Narrow", "Franklin Gothic Medium", sans-serif;
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.025em;
+  line-height: 1.2;
+  color: #30483d;
+  margin: 10px 0 5px;
+  min-height: 0;
+}
+@media (max-width: 650px) {
+  .collection .brand-anthony,
+  .collection .brand-florida {
+    font-size: clamp(21px, 4.5vw, 28px);
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+
+
+/* CONTACT SECTION
+   Keep the heading, text, and social links centered.
+*/
+#contact {
+  text-align: center;
+}
+#contact p {
+  margin-left: auto;
+  margin-right: auto;
+}
+#contact .contact-links {
+  justify-content: center;
+}
+
+/* PHONE AND TABLET SUPPORT
+   EDIT: Below 600px, collections stack so pictures and buttons remain easy to use.
+   Larger screens keep the two collections side by side.
+*/
+.collections {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.collection, .artist-bio, .info {
+  min-width: 0;
+}
+.info a {
+  overflow-wrap: anywhere;
+}
+nav > a, .social summary, .contact-links a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu {
+  top: 100%;
+  min-width: 0;
+  width: min(220px, calc(100vw - 48px));
+}
+@media (max-width: 800px) {
+  .page {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .collections {
+    gap: 32px;
+  }
+}
+@media (max-width: 600px) {
+  .collections {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+    max-width: 360px;
+  }
+  .collections::before {
+    display: none;
+  }
+  .photo {
+    height: auto;
+    aspect-ratio: 4 / 5;
+    border-radius: 180px 180px 0 0;
+  }
+  .collection .brand-anthony,
+  .collection .brand-florida {
+    font-size: clamp(25px, 7vw, 32px);
+    display: block;
+    margin: 10px 0 5px;
+  }
+  .shop {
+    font-size: 17px;
+    min-height: 58px;
+    padding: 14px;
+  }
+  .collection .category {
+    font-size: 18px;
+  }
+  .page {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  h1 {
+    font-size: clamp(28px, 7.4vw, 40px);
+    line-height: 1.15;
+    overflow-wrap: break-word;
+  }
+  .contact-links {
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+  }
+}
+
+
+
+/* WHITE CERAMIC GLAZE THEME: neutral text and dividers over the clay texture. */
+html { color: #181818; }
+.page { border-color: #777; }
+.info { border-color: #777; }
+.collections::before { background: #777; }
+.collection .category, footer { color: #292929; }
+.menu { background: #e3e3e3; border-color: #777; }
+.menu a:hover, .menu a:focus-visible { background: #c7c7c7; }
+
+
+
+/* Small introduction line; stays in normal flow above the pictures on all screens. */
+header .artist-tagline {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 7px 0 0;
+  color: #393939;
+}
+
+/* RAISED ART-VIEWING BUTTONS
+   EDIT: The shadows create a raised edge; active makes the button look pressed.
+*/
+.shop {
+  position: relative;
+  border-radius: 8px;
+  background-image: linear-gradient(to bottom, rgba(255,255,255,.16), rgba(0,0,0,.10));
+  box-shadow:
+    inset 0 2px 0 rgba(255,255,255,.28),
+    inset 0 -2px 0 rgba(0,0,0,.14),
+    0 5px 0 var(--button-edge),
+    0 8px 12px rgba(0,0,0,.22);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.shop.etsy {
+  --button-edge: #713015;
+}
+.shop.glasspass {
+  --button-edge: #1b2c24;
+}
+.shop:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    inset 0 2px 0 rgba(255,255,255,.32),
+    inset 0 -2px 0 rgba(0,0,0,.14),
+    0 6px 0 var(--button-edge),
+    0 10px 14px rgba(0,0,0,.24);
+}
+.shop:active {
+  transform: translateY(4px);
+  box-shadow:
+    inset 0 1px 3px rgba(0,0,0,.2),
+    0 1px 0 var(--button-edge),
+    0 3px 5px rgba(0,0,0,.18);
+}
+
+/* TEXT DEPTH
+   EDIT: Small shadows keep body text readable; headings use stronger relief.
+*/
+.page {
+  text-shadow: 0 1px 0 rgba(255,255,255,.8), 0 2px 3px rgba(0,0,0,.12);
+}
+h1 {
+  text-shadow: 0 1px 0 #fff, 0 3px 4px rgba(0,0,0,.20);
+}
+.collection .brand-anthony,
+.collection .brand-florida,
+.info h2 {
+  text-shadow: 0 1px 0 rgba(255,255,255,.9), 0 2px 2px rgba(0,0,0,.20), 0 4px 7px rgba(0,0,0,.10);
+}
+nav a, .social summary, .contact-links a {
+  text-shadow: 0 1px 0 rgba(255,255,255,.9), 0 2px 3px rgba(0,0,0,.16);
+}
+.shop {
+  text-shadow: 0 1px 1px rgba(0,0,0,.55), 0 2px 3px rgba(0,0,0,.25);
+}
+
+/* PHOTO DEPTH
+   EDIT: The border and layered shadows create a raised photograph effect.
+   Shadows do not change image sizes or the phone layout.
+*/
+.photo,
+.artist-photo img {
+  border: 1px solid rgba(255,255,255,.8);
+  box-shadow:
+    0 2px 3px rgba(0,0,0,.16),
+    0 7px 12px rgba(0,0,0,.18),
+    0 16px 25px -10px rgba(0,0,0,.25);
+}
+
+/* MAIN TITLE: each studio has its own font and color. */
+h1 .title-anthony {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: -.04em;
+  color: #9a3b1c;
+}
+h1 .title-florida {
+  font-family: Impact, "Arial Narrow", "Franklin Gothic Medium", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: .025em;
+  color: #30483d;
+  margin-top: 8px;
+}
+h1 .title-plus {
+  display: inline;
+  font-family: Georgia, serif;
+  font-style: normal;
+  font-weight: 400;
+  color: #393939;
+}
+
+/* Plus sign on its own line between the two studio names. */
+h1 .title-plus {
+  display: block;
+  font-size: .65em;
+  line-height: 1;
+  margin: 8px 0;
+}
+h1 .title-florida {
+  margin-top: 0;
+}
+
+
+
+
+
+/* Photo destination follows the viewing button. */
+.photo-link {
+  display: block;
+  border-radius: 180px 180px 0 0;
+  text-decoration: none;
+}
+.photo-link[href] { cursor: pointer; }
+.photo-link[href]:hover .photo { filter: brightness(1.04); }
+.photo-link[aria-disabled="true"] { cursor: default; }
+
+/* CONTACT: group the Instagram sentence with its account links. */
+#contact .contact-instagram-intro {
+  margin-top: 22px;
+}
+#contact .contact-links {
+  margin-top: 3px;
+}
+
+/* ABOUT BIO: space between paragraphs for comfortable reading. */
+.artist-bio p + p {
+  margin-top: 16px;
+}
+
+
+/* FULL-WIDTH ceramic-glaze-background.png AND CLEARER HEADINGS */
+html {
+  background-color: #f5f5f3;
+  background-image: url("images/ceramic-glaze-background.png");
+  background-size: 850px 850px;
+  background-repeat: repeat;
+}
+body { padding: 0; }
+.page {
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  min-height: 100svh;
+}
+nav { font-size: 20px; }
+.about > .about-heading {
+  grid-column: 1 / -1;
+  text-align: center;
+  width: 100%;
+  font-size: 34px;
+  letter-spacing: .06em;
+  margin: 0;
+}
+#contact > h2 { font-size: 34px; }
+@media (max-width: 650px) {
+  body { padding: 0; }
+  .page { min-height: 100svh; }
+  nav { font-size: 18px; gap: 18px; }
+  .about > .about-heading, #contact > h2 { font-size: 30px; }
+}
+
+/* LARGER MAIN STUDIO TITLE */
+h1 {
+  font-size: clamp(40px, 6vw, 68px);
+}
+@media (max-width: 600px) {
+  h1 {
+    font-size: clamp(30px, 8.2vw, 46px);
+  }
+}
